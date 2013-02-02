@@ -1,0 +1,2 @@
+- Create GUI designs for input form
+- Create GUI designs for output staging areas (WBT, PERT, Gantt)

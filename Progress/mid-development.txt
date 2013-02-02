@@ -1,0 +1,4 @@
+Mid-Development Alternations In Project Development
+
+- Removed the requirement for mathematical proofing
+- Instead of using arrays for dependent nodes, we are now using arraylists

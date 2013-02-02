@@ -1,0 +1,1 @@
+write php application so that write minutes into php form and it's converted to a conformist html doc.
