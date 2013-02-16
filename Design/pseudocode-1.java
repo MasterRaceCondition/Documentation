@@ -121,7 +121,7 @@ END METHOD
 
 ----------WBT----------
 
-void drawChart(arrayList level, parent)
+void drawChart(arrayList level, parent) // OMARS
 	i=0
 	for i < length of level
 		arraylist newLevel = get all children of level[i]
@@ -140,6 +140,35 @@ void drawChart(arrayList level, parent)
 		end if
 	end for
 end method
+
+
+void drawChart(X, Y, currentNode) // TODDS
+	//nodes 100 x, 120 y
+	drawNode(currentNode)
+	arraylist children = currentNode.getChildren()
+	lineMult = len(children) // number of children
+	lineSize = (len-1) * 120 + (len-1) * 50 // gap = 50, boxWidth = 120
+	drawLine(x, y+60, x+50, y+60) // 60 cause boxwidth = 120, 60 = 120/2
+	curX = x+50 // update x & y
+	curY = y+60
+	lineHalf = lineSize / 2
+	drawLine(curX - lineHalf, curY, curX + lineHalf, curY) // if lineSize = 0, then draws a dot
+	
+	curX = x-Linehalf
+	for c in children
+		drawLine(curX, curY + 20)
+		drawChart(curX, curY + 20, c)
+		curX + 120 + 50 // move one gap and one box along
+	end for
+end method
+
+void drawNode(node) // TODDS
+	drawBox(currentX, currentY, currentX + 100, currentY + 120)
+	drawText(node.name, currentX + 50, currentY + 60)
+end method
+	
+	
+	
 
 --------------PERT-----------
 			
@@ -220,7 +249,6 @@ void drawChart(X, Y, currentNode)
 	end if
 end method
 
-// critical path still to do
 	
 	
 
